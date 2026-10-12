@@ -20,7 +20,7 @@ public class Main {
         int choice = sc.nextInt();
 
         switch (choice) {
-
+             // Admin section which is open with a unique Password.
             case 1:
                 sc.nextLine();
 
@@ -46,7 +46,7 @@ public class Main {
                      int adminChoice = sc.nextInt();
                      switch(adminChoice)
                      {
-                        case 1 :service.displayAllComponent();
+                        case 1 :service.displayAllComponent(); // Display all component data.
 
                         System.out.println("Enter component Id");
                         int id = sc.nextInt();
@@ -56,7 +56,7 @@ public class Main {
 
                         if(price > 0)
                         {
-                            service.updateComponentPrice(id,price);
+                            service.updateComponentPrice(id,price); // Update Component price.
                         }
                         else{
                             System.out.println("Price must be greater than zero ");
@@ -81,11 +81,11 @@ public class Main {
                         case 3: System.out.println("Enter Id for delete component");
                         int deleteId = sc.nextInt();
                         sc.nextLine();
-                        service.deleteComponent(deleteId);
+                        service.deleteComponent(deleteId);// Delete component
                         break;
 
                         case 4: 
-                        System.out.println("Admin Logged Out!");
+                        System.out.println("Admin Logged Out!");// Logout
                         adminRunning = false;
                          break;
 
@@ -100,7 +100,7 @@ public class Main {
                 break;
 
             case 2: 
-                System.out.println("Salesman Login Successful");
+                System.out.println("Salesman Login Successful");// sales man login
                 boolean salesRunning = true;
                 while(salesRunning)
                 {
@@ -113,7 +113,7 @@ public class Main {
                 switch(salesManChoice)
                 {
                     case 1 :
-                         service.displayAllComponent();
+                         service.displayAllComponent(); //display all data
                          break;
 
                          case 2: 
@@ -121,7 +121,7 @@ public class Main {
                 int idDetails = sc.nextInt();
 
 
-                Cycle componentData = service.getComponentPriceById( idDetails);
+                Cycle componentData = service.getComponentPriceById( idDetails);//getting component by id
                 if(componentData != null)
                 {
                     System.out.println("Id :"+componentData.getId());
